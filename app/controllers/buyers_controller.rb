@@ -1,5 +1,6 @@
 class BuyersController < ApplicationController
   before_action :set_buyer, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /buyers
   # GET /buyers.json
