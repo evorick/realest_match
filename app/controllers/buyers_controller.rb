@@ -1,6 +1,6 @@
 class BuyersController < ApplicationController
   before_action :set_buyer, only: [:show, :edit, :update, :destroy]
-  
+
 
   # GET /buyers
   # GET /buyers.json
@@ -15,7 +15,8 @@ class BuyersController < ApplicationController
 
   # GET /buyers/new
   def new
-    @buyer = Buyer.new
+    # @buyer = Buyer.new          #Old code, prior to devise.
+    @buyer = current_user.buyers.build
   end
 
   # GET /buyers/1/edit
@@ -25,7 +26,7 @@ class BuyersController < ApplicationController
   # POST /buyers
   # POST /buyers.json
   def create
-    @buyer = Buyer.new(buyer_params)
+    @buyer = current_user.buyers.build(buyer_params)
 
     respond_to do |format|
       if @buyer.save
