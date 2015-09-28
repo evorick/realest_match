@@ -41,15 +41,15 @@
   </div>
   <div class="field">
     <%= f.label :state %><br>
-    <%= f.text_field :state %>
+    <%= f.select :state, options_for_select(us_states) %>
   </div>
   <div class="field">
     <%= f.label :min_price %><br>
-    <%= f.number_field :min_price %>
+    <%= f.select :min_price, options_for_select(min_price) %>
   </div>
   <div class="field">
     <%= f.label :max_price %><br>
-    <%= f.number_field :max_price %>
+    <%= f.select :max_price, options_for_select(max_price) %>
   </div>
   <div class="actions">
     <%= f.submit %>

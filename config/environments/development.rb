@@ -41,4 +41,7 @@ Rails.application.configure do
 
   # Added for the Devise configuration
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Added to include all helpers
+  config.action_controller.include_all_helpers = true
 end
