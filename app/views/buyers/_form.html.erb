@@ -29,11 +29,11 @@
   </div>
   <div class="field">
     <%= f.label :number_bedrooms %><br>
-    <%= f.number_field :number_bedrooms %>
+    <%= f.select :number_bedrooms, options_for_select(min_rooms) %>
   </div>
   <div class="field">
     <%= f.label :number_bathrooms %><br>
-    <%= f.number_field :number_bathrooms %>
+    <%= f.select :number_bathrooms, options_for_select(min_baths) %>
   </div>
   <div class="field">
     <%= f.label :city %><br>
