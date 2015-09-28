@@ -36,6 +36,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Users and login ability
 gem 'devise'
 
+# When your app is using Paranoia, calling destroy on an ActiveRecord object doesn't actually destroy the database record, but just hides it.
+gem "paranoia", "~> 2.0"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
