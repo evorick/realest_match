@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150928163957) do
+ActiveRecord::Schema.define(version: 20150928165319) do
 
   create_table "buyers", force: :cascade do |t|
     t.string   "first_name"
@@ -44,7 +44,10 @@ ActiveRecord::Schema.define(version: 20150928163957) do
     t.integer  "price"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.datetime "deleted_at"
   end
+
+  add_index "listers", ["deleted_at"], name: "index_listers_on_deleted_at"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
