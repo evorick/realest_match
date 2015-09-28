@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :listers
   devise_for :users
   resources :buyers
   # The priority is based upon order of creation: first created -> highest priority.

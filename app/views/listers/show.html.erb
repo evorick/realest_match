@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @lister.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @lister.last_name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @lister.phone_number %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @lister.email %>
+</p>
+
+<p>
+  <strong>Number bedrooms:</strong>
+  <%= @lister.number_bedrooms %>
+</p>
+
+<p>
+  <strong>Number bathrooms:</strong>
+  <%= @lister.number_bathrooms %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @lister.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @lister.state %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @lister.price %>
+</p>
+
+<%= link_to 'Edit', edit_lister_path(@lister) %> |
+<%= link_to 'Back', listers_path %>

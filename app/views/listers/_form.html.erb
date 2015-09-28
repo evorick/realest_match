@@ -1,0 +1,53 @@
+<%= form_for(@lister) do |f| %>
+  <% if @lister.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lister.errors.count, "error") %> prohibited this lister from being saved:</h2>
+
+      <ul>
+      <% @lister.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br>
+    <%= f.text_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :number_bedrooms %><br>
+    <%= f.number_field :number_bedrooms %>
+  </div>
+  <div class="field">
+    <%= f.label :number_bathrooms %><br>
+    <%= f.number_field :number_bathrooms %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
