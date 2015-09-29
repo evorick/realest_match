@@ -8,4 +8,5 @@ class Lister < ActiveRecord::Base
   validates :price, numericality: true
   validates :email, format: { with: /.+@.+\..+/i, message: "must be a valid email address" }
   validates :email, uniqueness: true
+  
 end
