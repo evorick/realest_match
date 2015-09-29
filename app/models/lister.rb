@@ -1,6 +1,9 @@
 class Lister < ActiveRecord::Base
   acts_as_paranoid
 
+  #Added for the Ransack gem implementation.
+  has_many :buyers
+
   validates :first_name, :last_name, :phone_number, :email, :number_bedrooms, :number_bathrooms, :city, :state, :price, presence: true
   validates :first_name, :last_name, :email, length: { maximum: 25 }
   validates :number_bedrooms, :number_bathrooms, :price, numericality: { only_integer: true }

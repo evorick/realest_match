@@ -39,6 +39,9 @@ gem 'devise'
 # When your app is using Paranoia, calling destroy on an ActiveRecord object doesn't actually destroy the database record, but just hides it.
 gem "paranoia", "~> 2.0"
 
+# Search functionality
+gem 'ransack'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
