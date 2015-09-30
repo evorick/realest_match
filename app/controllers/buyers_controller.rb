@@ -1,11 +1,12 @@
 class BuyersController < ApplicationController
   before_action :set_buyer, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
 
   # GET /buyers
   # GET /buyers.json
   def index
-    @buyers = Buyer.all
+    @q = Buyer.ransack(params[:q])
+    @buyers = @q.result
   end
 
   # GET /buyers/1

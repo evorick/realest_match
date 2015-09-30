@@ -28,8 +28,14 @@ class ListersController < ApplicationController
 
     respond_to do |format|
       if @lister.save
-        format.html { redirect_to @lister, notice: 'Lister was successfully created.' }
-        format.json { render :show, status: :created, location: @lister }
+
+        # Added for the redirect to the buyer search.
+        format.html { redirect_to buyers_url, notice: 'Lister was successfully created.' }
+        format.json { redirect_to buyers_url, status: :created, location: @lister }
+
+        # Original code.
+        # format.html { redirect_to @lister, notice: 'Lister was successfully created.' }
+        # format.json { render :show, status: :created, location: @lister }
       else
         format.html { render :new }
         format.json { render json: @lister.errors, status: :unprocessable_entity }
