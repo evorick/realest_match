@@ -1,0 +1,20 @@
+<%= search_form_for @q do |f| %>
+
+  <%=  f.label :number_bedrooms %>
+  <%=  f.select :number_bedrooms_lteq, options_for_select(rooms, @q.number_bedrooms_cont) %>
+
+  <%=  f.label :number_bathrooms %>
+  <%=  f.select :number_bathrooms_lteq, options_for_select(rooms, @q.number_bathrooms_cont) %>
+
+  <%= f.label :city %>
+  <%= f.search_field :city_cont %>
+
+  <%=  f.label :state %>
+  <%=  f.select :state_cont, options_for_select(us_states, @q.state_cont) %>
+
+  <%=  f.label "Max listing price estimate" %>
+  <%=  f.select :max_price_gteq, options_for_select(max_price, @q.max_price_cont) %>
+
+  <%= f.submit %>
+
+<% end %>

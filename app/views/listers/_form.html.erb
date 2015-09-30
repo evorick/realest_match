@@ -44,8 +44,8 @@
     <%= f.select :state, options_for_select(us_states) %>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
-    <%= f.number_field :price %>
+    <%= f.label "Price estimate" %><br>
+    <%= f.select :price, options_for_select(max_price) %>
   </div>
   <div class="actions">
     <%= f.submit %>

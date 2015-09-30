@@ -1,12 +1,16 @@
 class BuyersController < ApplicationController
   before_action :set_buyer, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :search_buyers]
 
   # GET /buyers
   # GET /buyers.json
   def index
     @q = Buyer.ransack(params[:q])
     @buyers = @q.result
+  end
+
+  
+  def search_buyers
   end
 
   # GET /buyers/1
@@ -16,7 +20,7 @@ class BuyersController < ApplicationController
 
   # GET /buyers/new
   def new
-    # @buyer = Buyer.new          #Old code, prior to devise.
+    # @buyer = Buyer.new          #Old code, prior to Devise.
     @buyer = current_user.buyers.build
   end
 
