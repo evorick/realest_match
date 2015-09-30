@@ -5,7 +5,8 @@ class BuyersController < ApplicationController
   # GET /buyers
   # GET /buyers.json
   def index
-    @buyers = Buyer.all
+    @q = Buyer.ransack(params[:q])
+    @buyers = @q.result
   end
 
   # GET /buyers/1
