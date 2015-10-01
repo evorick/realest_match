@@ -4,9 +4,17 @@ class BuyersController < ApplicationController
 
   # GET /buyers
   # GET /buyers.json
-  def index
+  def search
     @q = Buyer.ransack(params[:q])
     @buyers = @q.result
+  end
+
+  # GET /buyers
+  # GET /buyers.json
+  def index
+   # @q = Buyer.ransack(params[:q])
+   # @buyers = @q.result
+   @buyers = Buyer.all
   end
 
   # GET /buyers/1
@@ -16,19 +24,12 @@ class BuyersController < ApplicationController
 
   # GET /buyers/new
   def new
-    # @buyer = Buyer.new          #Old code, prior to Devise.
+    # @buyer = Buyer.new   #Old code, prior to Devise.
     @buyer = current_user.buyers.build
   end
 
   # GET /buyers/1/edit
   def edit
-  end
-
-  # GET /buyers
-  # GET /buyers.json
-  def search
-    @q = Buyer.ransack(params[:q])
-    @buyers = @q.result
   end
 
   # POST /buyers
