@@ -30,8 +30,8 @@ class ListersController < ApplicationController
       if @lister.save
 
         # Added for the redirect to the buyer search.
-        format.html { redirect_to buyers_url, notice: 'Lister was successfully created.' }
-        format.json { redirect_to buyers_url, status: :created, location: @lister }
+        format.html { redirect_to buyers_search_url, notice: 'Lister was successfully created.' }
+        format.json { redirect_to buyers_search_url, status: :created, location: @lister }
 
         # Original code.
         # format.html { redirect_to @lister, notice: 'Lister was successfully created.' }

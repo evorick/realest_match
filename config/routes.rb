@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
   resources :listers
   devise_for :users
+
+  # The route for the buyers search. It was 100% necessary to put this above resources :buyers otherwise it did not render.
+  get '/buyers/search' => 'buyers#search'
+
   resources :buyers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'buyers#index'
-
-  # The route for the buyers search:
-  get '/buyers/search_buyers' => 'buyers#search_buyers'
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
