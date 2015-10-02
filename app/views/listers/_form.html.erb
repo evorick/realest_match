@@ -1,53 +1,57 @@
-<%= form_for(@lister) do |f| %>
-  <% if @lister.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@lister.errors.count, "error") %> prohibited this lister from being saved:</h2>
+<form role="form">
+  <div class="form-group">
+    <%= form_for(@lister) do |f| %>
+      <% if @lister.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@lister.errors.count, "error") %> prohibited this lister from being saved:</h2>
 
-      <ul>
-      <% @lister.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% @lister.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+      <div class="field">
+        <%= f.label :first_name %><br>
+        <%= f.text_field :first_name %>
+      </div>
+      <div class="field">
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name %>
+      </div>
+      <div class="field">
+        <%= f.label :phone_number %><br>
+        <%= f.text_field :phone_number %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :number_bedrooms %><br>
+        <%= f.select :number_bedrooms, options_for_select(rooms) %>
+      </div>
+      <div class="field">
+        <%= f.label :number_bathrooms %><br>
+        <%= f.select :number_bathrooms, options_for_select(baths) %>
+      </div>
+      <div class="field">
+        <%= f.label :city %><br>
+        <%= f.text_field :city %>
+      </div>
+      <div class="field">
+        <%= f.label :state %><br>
+        <%= f.select :state, options_for_select(us_states) %>
+      </div>
+      <div class="field">
+        <%= f.label "Price estimate" %><br>
+        <%= f.select :price, options_for_select(max_price) %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_number %><br>
-    <%= f.text_field :phone_number %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :number_bedrooms %><br>
-    <%= f.select :number_bedrooms, options_for_select(rooms) %>
-  </div>
-  <div class="field">
-    <%= f.label :number_bathrooms %><br>
-    <%= f.select :number_bathrooms, options_for_select(baths) %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.select :state, options_for_select(us_states) %>
-  </div>
-  <div class="field">
-    <%= f.label "Price estimate" %><br>
-    <%= f.select :price, options_for_select(max_price) %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</form>

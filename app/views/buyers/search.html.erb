@@ -1,26 +1,27 @@
-<h1>Search for Buyers for your Home</h1>
 
-<%= render 'searchform' %>
+<div id="main-container" class="container">
+  <h1>Search for Buyers for your Home</h1>
 
-<br>
+  <%= render 'searchform' %>
 
-<table>
-    <thead>
-      <tr>
-        <th><%= @buyers.count %> Potential buyers</th>
-        <th></th>
-        <th></th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+  <br>
 
-    <tbody>
-      <% @buyers.each do |buyer| %>
+  <table>
+      <thead>
         <tr>
-          <td>Anonymous buyer from </td>
-          <td><%= buyer.city %></td>
-          <td><%= buyer.state %></td>
+          <th><%= @buyers.count %> Potential buyers</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+
+      <tbody>
+        <% @buyers.each do |buyer| %>
+          <tr>
+            <td>Anonymous buyer from &nbsp</td>
+            <td><%= buyer.city %>&nbsp</td>
+            <td><%= buyer.state %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table> 
+</div>
