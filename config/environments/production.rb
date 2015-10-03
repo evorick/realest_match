@@ -83,4 +83,8 @@ Rails.application.configure do
 
   # Added to include all helpers
   config.action_controller.include_all_helpers = true
+
+  #Added to make sure this JS file will be precompiled in production.
+  #TODO: Check out this area if you have an error upon pushing to production.
+  config.assets.precompile += %w( buyers.js )
 end

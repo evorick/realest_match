@@ -1,3 +1,4 @@
+
 <%= search_form_for @q, url: buyers_search_path do |f| %>
 
   <%=  f.label :number_bedrooms %>
@@ -15,6 +16,6 @@
   <%=  f.label "Max listing price estimate" %>
   <%=  f.select :max_price_gteq, options_for_select(max_price, @q.max_price_cont) %>
 
-  <%= f.submit %>
+  <%= f.submit "Search!", class: "btn btn-large btn-primary", id: "search" %>
 
 <% end %>
