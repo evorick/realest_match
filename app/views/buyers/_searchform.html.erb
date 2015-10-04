@@ -1,21 +1,21 @@
 
 <%= search_form_for @q, url: buyers_search_path do |f| %>
 
-  <%=  f.label :number_bedrooms %>
+  <%=  f.label "Bedrooms:" %>
   <%=  f.select :number_bedrooms_lteq, options_for_select(rooms, @q.number_bedrooms_cont) %>
 
-  <%=  f.label :number_bathrooms %>
+  <%=  f.label "Bathrooms:", class: "left-padding" %>
   <%=  f.select :number_bathrooms_lteq, options_for_select(rooms, @q.number_bathrooms_cont) %>
 
-  <%= f.label :city %>
-  <%= f.search_field :city_cont %>
+  <%= f.label :city, class: "left-padding" %>
+  <%= f.search_field :city_cont, class: "pretty-form-box" %>
 
-  <%=  f.label :state %>
+  <%=  f.label :state, class: "left-padding" %>
   <%=  f.select :state_cont, options_for_select(us_states, @q.state_cont) %>
 
-  <%=  f.label "Max listing price estimate" %>
+  <%=  f.label "Max listing price estimate:", class: "left-padding" %>
   <%=  f.select :max_price_gteq, options_for_select(max_price, @q.max_price_cont) %>
 
-  <%= f.submit "Search!", class: "btn btn-large btn-primary", id: "search" %>
+  <%= f.submit "Search!", class: "btn btn-large btn-primary left-padding", id: "search" %>
 
 <% end %>

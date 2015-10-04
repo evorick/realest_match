@@ -1,15 +1,15 @@
 
-<div id="main-container" class="container">
+<div class="container container-fluid">
   <h1>Search for Buyers for your Home</h1>
 
   <%= render 'searchform' %>
 
   <br>
   <div id="results">
-    <table>
+    <table class="table table-striped">
         <thead>
           <tr>
-            <th><%= @buyers.count %> Potential buyers</th>
+            <th><%= @buyers.count %> Potential Buyers!</th>
             <th colspan="3"></th>
           </tr>
         </thead>
