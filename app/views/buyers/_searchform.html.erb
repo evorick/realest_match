@@ -16,6 +16,6 @@
   <%=  f.label "Max listing price estimate:", class: "left-padding" %>
   <%=  f.select :max_price_gteq, options_for_select(max_price, @q.max_price_cont) %>
 
-  <%= f.submit "Search!", class: "btn btn-large btn-primary left-padding", id: "search" %>
+  <%= f.submit "Search!", class: "btn btn-large btn-primary left-padding", id: "buyer-search" %>
 
 <% end %>

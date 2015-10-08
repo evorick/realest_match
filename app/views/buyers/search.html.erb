@@ -5,7 +5,8 @@
   <%= render 'searchform' %>
 
   <br>
-  <div id="results">
+<% if @buyers.count>0 %>
+  <div class="hide-results">
     <table class="table table-striped">
         <thead>
           <tr>
@@ -25,4 +26,5 @@
         </tbody>
       </table> 
   </div>
+  <% end %>
 </div>

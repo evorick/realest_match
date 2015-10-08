@@ -2,8 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#results {
-  //display: none;
+
+.hide-results {
+  //visibility: hidden;
+}
+
+.show-results {
+  visibility: visible;
 }
 
 .left-padding {
