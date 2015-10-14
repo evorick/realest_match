@@ -7,7 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/navbar' %>
+  <% if user_signed_in? %>
+    <%= render 'layouts/navbar' %>
+  <% end %>
+
+
 <!-- TODO: customize the flash messages -->
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>

@@ -5,15 +5,15 @@ class BuyersController < ApplicationController
   # GET /buyers
   # GET /buyers.json
   def search
-#    @q = Buyer.ransack(params[:q])
+    #  @q = Buyer.ransack(params[:q])
     
-  if !params[:q].blank?
-    @q=Buyer.ransack(params[:q])
-  else
-    @q=Buyer.ransack({:id_eq => 0})
-  end
+    if !params[:q].blank?
+      @q=Buyer.ransack(params[:q])
+    else
+      @q=Buyer.ransack({:id_eq => 0})
+    end
 
-  @buyers = @q.result
+    @buyers = @q.result
 
 
   end
