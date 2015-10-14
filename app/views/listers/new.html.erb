@@ -1,10 +1,12 @@
 <div class="container top-margin-reduction">
   <div class="form-signin">
-    <h1 class="form-signin-heading">New Lister</h1>
+    <h1 class="form-signin-heading">Tell us about yourself</h1>
 
     <%= render 'form' %>
     <br>
-    <%= link_to 'Back', listers_path %>
+    <% if user_signed_in? %>
+      <%= link_to 'Back', listers_path %>
+    <% end %>
     <br>
   </div>
 </div>

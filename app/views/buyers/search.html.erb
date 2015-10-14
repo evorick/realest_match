@@ -1,8 +1,17 @@
 
-<div class="container container-fluid top-margin-reduction">
-  <h1>Search for Buyers for your Home</h1>
+<div class="container container-fluid">  <!-- I removed the class top-margin-reduction -->
 
-  <%= render 'searchform' %>
+  <div class="jumbotron" id="buyers-search-margin">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 col-md-offset-1">
+          <h1>Search Buyers for your Home</h1>
+          <br>
+          <%= render 'searchform' %>
+        </div>
+      </div>  
+    </div>
+  </div>
 
   <br>
 <% if @buyers.count>0 %>
