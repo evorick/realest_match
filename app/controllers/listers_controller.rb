@@ -1,5 +1,6 @@
 class ListersController < ApplicationController
   before_action :set_lister, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:new]
 
   # GET /listers
   # GET /listers.json
