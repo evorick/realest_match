@@ -21,9 +21,9 @@ class BuyersController < ApplicationController
   # GET /buyers
   # GET /buyers.json
   def index
-   # @q = Buyer.ransack(params[:q])
-   # @buyers = @q.result
-   @buyers = Buyer.all
+    if current_user.admin?
+      @buyers = Buyer.all
+    end
   end
 
   # GET /buyers/1
