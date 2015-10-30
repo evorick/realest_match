@@ -1,10 +1,14 @@
 <div class="container top-margin-reduction">
-  <div class="form-signin">
-    <h1 class="form-signin-heading">Editing Buyer</h1>
+  <% if current_user.admin? %>
+    <div class="form-signin">
+      <h1 class="form-signin-heading">Editing Buyer</h1>
 
-    <%= render 'form' %>
+      <%= render 'form' %>
 
-    <%= link_to 'Show', @buyer %> |
-    <%= link_to 'Back', buyers_path %>
-  </div>
+      <%= link_to 'Show', @buyer %> |
+      <%= link_to 'Back', buyers_path %>
+    </div>
+  <% else %>
+  <h1>You must be an admin to view this page.</h1>
+  <% end %>
 </div>

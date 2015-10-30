@@ -21,9 +21,7 @@ class BuyersController < ApplicationController
   # GET /buyers
   # GET /buyers.json
   def index
-    if current_user.admin?
       @buyers = Buyer.all
-    end
   end
 
   # GET /buyers/1

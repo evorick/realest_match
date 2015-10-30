@@ -1,10 +1,14 @@
 <div class="container top-margin-reduction">
-  <div class="form-signin">
-    <h1 class="form-signin-heading">Editing Lister</h1>
+  <% if current_user.admin? %>
+    <div class="form-signin">
+      <h1 class="form-signin-heading">Editing Lister</h1>
 
-    <%= render 'form' %>
-    
-    <%= link_to 'Show', @lister %> |
-    <%= link_to 'Back', listers_path %>
-  </div>
+      <%= render 'form' %>
+      
+      <%= link_to 'Show', @lister %> |
+      <%= link_to 'Back', listers_path %>
+    </div>
+  <% else %>
+    <h1>You must be an admin to view this page.</h1>
+  <% end %>
 </div>
