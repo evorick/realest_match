@@ -30,11 +30,11 @@
       </div>
       <div class="field">
         <%= f.label :number_bedrooms %><br>
-        <%= f.select :number_bedrooms, options_for_select(rooms) %>
+        <%= f.select(:number_bedrooms, options_for_select(rooms), {}, {class: "form-control"}) %>
       </div>
       <div class="field">
         <%= f.label :number_bathrooms %><br>
-        <%= f.select :number_bathrooms, options_for_select(baths) %>
+        <%= f.select(:number_bathrooms, options_for_select(baths), {}, {class: "form-control"}) %>
       </div>
       <div class="field">
         <%= f.label :city %><br>
@@ -42,11 +42,11 @@
       </div>
       <div class="field">
         <%= f.label :state %><br>
-        <%= f.select :state, options_for_select(us_states) %>
+        <%= f.select(:state, options_for_select(us_states), {}, {class: "form-control"}) %>
       </div>
       <div class="field">
         <%= f.label "Price estimate" %><br>
-        <%= f.select :price, options_for_select(max_price) %>
+        <%= f.select(:price, options_for_select(max_price), {}, {class: "form-control"}) %>
       </div>
       <br>
       <div class="actions">
