@@ -1,4 +1,3 @@
-
 <%= search_form_for @q, url: buyers_search_path do |f| %>
 
   <%=  f.label "Bedrooms:" %>
@@ -15,9 +14,8 @@
 
   <%=  f.label "Max listing price estimate:", class: "left-padding" %>
   <%=  f.select :max_price_gteq, options_for_select(max_price, @q.max_price_cont) %>
-  
-  <div class="col-md-10 col-md-offset-4" id="top-margin-search-button">
-    <%= f.submit "Search!", class: "btn btn-large btn-primary left-padding col-md-4", id: "buyer-search" %>
+    
+  <div class="col-md-10" id="top-margin-search-button">
+    <%= f.submit "Search!", class: "btn btn-large btn-primary center-block", id: "buyer-search" %>
   </div>
-
 <% end %>
