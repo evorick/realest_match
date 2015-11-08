@@ -1,12 +1,14 @@
-<div class="container">
-  <div class="form-signin">
-    <h1 class="form-signin-heading">Tell us about yourself</h1>
+<div class="new-listers-background">
+  <div class="container container-fluid">
+    <div class="form-signin well">
+      <h1 class="form-signin-heading">Submit info:</h1>
 
-    <%= render 'form' %>
-    <br>
-    <% if user_signed_in? %>
-      <%= link_to 'Back', listers_path %>
-    <% end %>
-    <br>
+      <%= render 'form' %>
+      <br>
+      <% if user_signed_in? %>
+        <%= link_to 'Back', listers_path %>
+      <% end %>
+      <br>
+    </div>
   </div>
 </div>
