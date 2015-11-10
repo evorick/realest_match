@@ -32,7 +32,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   # Needed to push images to Heroku:
-  config.serve_static_assets = true
+  config.serve_static_assets = false
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
